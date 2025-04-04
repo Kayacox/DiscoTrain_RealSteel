@@ -8,6 +8,7 @@ TagManager:
   - FxTemporaire
   - RawOre
   - ProcessedOre
+  - Coal
   layers:
   - Default
   - TransparentFX

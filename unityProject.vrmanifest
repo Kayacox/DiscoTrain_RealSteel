@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.realsteel.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\492212\\Documents\\GitHub\\DiscoTrain\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\Real steel\\DiscoTrain_RealSteel\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Real Steel [Testing]"
