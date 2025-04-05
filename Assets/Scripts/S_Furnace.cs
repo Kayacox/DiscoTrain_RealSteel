@@ -46,7 +46,7 @@ private void OnTriggerEnter(Collider other)
             Destroy(other.gameObject);
             fuelReserve += 1;
             isFired = true;
-            Instantiate(Fuel, transform.position, Quaternion.identity);
+            Instantiate(Fuel, myVector, Quaternion.identity);
         }
         while (fuelReserve > 0)
         {
