@@ -1,6 +1,8 @@
 ﻿//======= Copyright (c) Valve Corporation, All rights reserved. ===============
 using UnityEngine;
 using System.Collections;
+using UnityEngine.EventSystems;
+using Valve.VR.Extras;
 
 namespace Valve.VR.Extras
 {
