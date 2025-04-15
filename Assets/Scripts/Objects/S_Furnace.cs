@@ -4,18 +4,22 @@ using UnityEngine;
 
 public class S_Furnace : MonoBehaviour
 {
-    Vector3 myVector = new Vector3(0.4f, 0.08f, 5.7f);
+    Vector3 myVector = new Vector3(2.81f, 2f, 5.275f);
+    Vector3 respawnOre = new Vector3(-12.54f, 19.881f, 2f);
     public GameObject Processed_Ore;
+    public GameObject Raw_Ore;
     public GameObject Fuel;
-    private bool isFired = false;
+    public bool isFired = false;
     public int fuelReserve = 0;
-    private bool reduceFireTime;
+    public bool reduceFireTime = true;
 
     IEnumerator fireDelay()
     {
         reduceFireTime = false;
+        isFired = true;
         yield return new WaitForSecondsRealtime(20);
         fuelReserve -= 1;
+        isFired = false;
         reduceFireTime = true;
     }
     // Start is called before the first frame update
@@ -29,33 +33,24 @@ public class S_Furnace : MonoBehaviour
     {
         if (reduceFireTime && fuelReserve > 0)
         {
-            fireDelay();
+            StartCoroutine(fireDelay());
         }
-        Debug.Log(isFired);
     }
 private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "RawOre" && isFired)
         {
-            Instantiate(Processed_Ore, other.gameObject.transform.position, Quaternion.identity);
+            Instantiate(Raw_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Processed_Ore, respawnOre, Quaternion.identity);
             Destroy(other.gameObject);
         }
 
-        else if (other.gameObject.tag == "Coal")
+        if (other.gameObject.tag == "Coal")
         {
             Destroy(other.gameObject);
             fuelReserve += 1;
             isFired = true;
             Instantiate(Fuel, myVector, Quaternion.identity);
-        }
-        while (fuelReserve > 0)
-        {
-            fuelReserve -= 1;
-            if (fuelReserve == 0)
-            {
-                isFired = false;
-            }
-            
         }
     }
 }
