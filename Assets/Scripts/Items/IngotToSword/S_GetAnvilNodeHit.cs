@@ -5,11 +5,11 @@ using UnityEngine;
 public class S_GetAnvilNodeHit : MonoBehaviour
 {
     public bool hit = false;
-    public GameObject Hammer;
+    GameObject Hammer;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Hammer = GameObject.Find("Hammer");
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class S_GetAnvilNodeHit : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Hammer)
+        if (other.transform.root.gameObject == Hammer)
         {
             hit = true;
         }

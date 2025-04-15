@@ -16,8 +16,10 @@ public class S_IngotHammer : MonoBehaviour
     private Hand currentHand;
     private Interactable hammerInteractable;
     private int progress = 0;
-    private bool nodeHit = false;
+    private int hitCount = 0;
+    private bool hammerOn = false;
     private bool onAnvil = false;
+    private bool nodeStarted = false;
     private GameObject activeNode;
     public S_GetAnvilNodeHit nodescript1;
     public S_GetAnvilNodeHit nodescript2;
@@ -44,55 +46,63 @@ public class S_IngotHammer : MonoBehaviour
 
     private void newNode()
     {
-        Debug.Log("Made it in");
-        //MeshRenderer previousRenderer = activeNode.GetComponent<MeshRenderer>();
-        Debug.Log("Post mesh");
-        /*if (previousRenderer != null)
+        if (nodeStarted) 
         {
             activeNode.GetComponent<MeshRenderer>().enabled = false;
-            Debug.Log("active not null");
-        }*/
-        Debug.Log("Pre random");
+        }
         int randomIndex = Random.Range(0, nodes.Length);
-        Debug.Log("Randoms assigned");
         activeNode = nodes[randomIndex];
         Debug.Log(activeNode);
         activeNodescript = scripts[randomIndex];
 
         nodeRenderer = activeNode.GetComponent<MeshRenderer>();
         activeNode.GetComponent<MeshRenderer>().enabled = true;
-
-        Debug.Log("Visible");
+        nodeStarted = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        foreach(S_GetAnvilNodeHit node in scripts) 
-        {
-            if (node.hit)
-            {
-                if (node == activeNodescript)
-                {
-                    Debug.Log("Correct Node");
-                }
-                else { Debug.Log("Wrong Node"); }
-            }    
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == Anvil) 
+        if (other.gameObject.name.Contains("Anvil")) 
         {
+            Debug.Log("On anvil");
             onAnvil = true;
         }
+        if (other.gameObject.name.Contains("Hammer") && !hammerOn)
+        {
+            hammerOn = true;
+            Debug.Log("Foo");
+            foreach (S_GetAnvilNodeHit node in scripts)
+            {
+                if (node.hit)
+                {
+                    if (node == activeNodescript)
+                    {
+                        Debug.Log("Correct Node");
+                    }
+                    else { Debug.Log("Wrong Node"); }
+                }
+            }
+            hitCount++;
+            Debug.Log($"{hitCount}");
+            newNode();
+        }
+        
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == Anvil)
         {
             onAnvil = false;
+        }
+        if (other.gameObject.name.Contains("Hammer")) 
+        {
+            hammerOn = false;
         }
     }
 }
