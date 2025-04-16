@@ -15,4 +15,16 @@ public class S_SoakLarge : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        S_SwordScript swordScript = other.gameObject.GetComponent<S_SwordScript>();
+        Debug.Log(swordScript);
+        if (other.gameObject.name.Contains("Sword")) 
+        {
+            Debug.Log("???????");
+            other.gameObject.GetComponent<S_SwordScript>().soaked = true;
+            Debug.Log("wet");
+        }
+    }
 }

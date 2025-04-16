@@ -70,7 +70,6 @@ public class S_IngotHammer : MonoBehaviour
     {
         if (other.gameObject.name.Contains("Anvil")) 
         {
-            Debug.Log("On anvil");
             onAnvil = true;
         }
         if (other.gameObject.name.Contains("Hammer") && !hammerOn)
