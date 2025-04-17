@@ -39,7 +39,6 @@ public class S_IngotHammer : MonoBehaviour
         for (int i = 0; i < nodes.Length; i++)
         {
             scripts[i] = nodes[i].GetComponent<S_GetAnvilNodeHit>();
-            Debug.Log(nodes[i].GetComponent<S_GetAnvilNodeHit>());
         }
         newNode();
     }
@@ -52,7 +51,6 @@ public class S_IngotHammer : MonoBehaviour
         }
         int randomIndex = Random.Range(0, nodes.Length);
         activeNode = nodes[randomIndex];
-        Debug.Log(activeNode);
         activeNodescript = scripts[randomIndex];
 
         nodeRenderer = activeNode.GetComponent<MeshRenderer>();
