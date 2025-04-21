@@ -119,7 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  Hammer: {fileID: 4417049747518672517, guid: b4af071b52a194f4b88942e39eb7db7a, type: 3}
 --- !u!1 &3089861109804728752
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,7 +130,6 @@ GameObject:
   - component: {fileID: 8368167304607420265}
   - component: {fileID: 2110798125888779438}
   - component: {fileID: 4571057497423440528}
-  - component: {fileID: 5032271867499204953}
   - component: {fileID: 3022782183775311020}
   - component: {fileID: 8687658260930305258}
   - component: {fileID: 6805690881787066834}
@@ -211,33 +209,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!54 &5032271867499204953
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3089861109804728752}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
 --- !u!65 &3022782183775311020
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -277,6 +248,7 @@ MonoBehaviour:
   Node3: {fileID: 4198241405180595094}
   Node4: {fileID: 4928834814715320182}
   Anvil: {fileID: 2260900786134231309, guid: 3fc602795efa2484e941c0b6817fc9aa, type: 3}
+  sword: {fileID: 3591014559421510553, guid: ffbf6193eb3e1a549a42a407b6b4afde, type: 3}
   nodescript1: {fileID: 0}
   nodescript2: {fileID: 0}
   nodescript3: {fileID: 0}
@@ -699,7 +671,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  Hammer: {fileID: 4417049747518672517, guid: b4af071b52a194f4b88942e39eb7db7a, type: 3}
 --- !u!1 &4928834814715320182
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +790,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  Hammer: {fileID: 4417049747518672517, guid: b4af071b52a194f4b88942e39eb7db7a, type: 3}
 --- !u!1 &6687396575698292660
 GameObject:
   m_ObjectHideFlags: 0
@@ -939,4 +909,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hit: 0
-  Hammer: {fileID: 4417049747518672517, guid: b4af071b52a194f4b88942e39eb7db7a, type: 3}

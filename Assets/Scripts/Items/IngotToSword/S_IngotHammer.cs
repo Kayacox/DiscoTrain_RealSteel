@@ -7,15 +7,13 @@ using Valve.VR.InteractionSystem;
 
 public class S_IngotHammer : MonoBehaviour
 {
-    public GameObject Hammer;
     public GameObject Node1;
     public GameObject Node2;
     public GameObject Node3;
     public GameObject Node4;
     public GameObject Anvil;
-    private Hand currentHand;
+    public GameObject sword;
     private Interactable hammerInteractable;
-    private int progress = 0;
     private int hitCount = 0;
     private bool hammerOn = false;
     private bool onAnvil = false;
@@ -70,7 +68,7 @@ public class S_IngotHammer : MonoBehaviour
         {
             onAnvil = true;
         }
-        if (other.gameObject.name.Contains("Hammer") && !hammerOn)
+        if (other.gameObject.name.Contains("Hammer") && !hammerOn && onAnvil || onAnvil && !nodeStarted)
         {
             hammerOn = true;
             Debug.Log("Foo");
@@ -88,6 +86,10 @@ public class S_IngotHammer : MonoBehaviour
             hitCount++;
             Debug.Log($"{hitCount}");
             newNode();
+            if (hitCount == 4)
+            {
+                changeToSword();
+            }
         }
         
     }
@@ -101,5 +103,10 @@ public class S_IngotHammer : MonoBehaviour
         {
             hammerOn = false;
         }
+    }
+    private void changeToSword()
+    {
+        Instantiate(sword, transform.position, transform.rotation);
+        Destroy(gameObject);
     }
 }

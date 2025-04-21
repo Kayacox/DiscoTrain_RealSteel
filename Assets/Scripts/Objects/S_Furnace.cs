@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class S_Furnace : MonoBehaviour
 {
-    Vector3 myVector = new Vector3(2.81f, 2f, 5.275f);
+    Vector3 respawnCoal = new Vector3(2.81f, 2f, 5.275f);
     Vector3 respawnOre = new Vector3(-12.54f, 19.881f, 2f);
     public GameObject Processed_Ore;
     public GameObject Raw_Ore;
@@ -41,7 +41,7 @@ private void OnTriggerEnter(Collider other)
         if (other.gameObject.tag == "RawOre" && isFired)
         {
             Instantiate(Raw_Ore, respawnOre, Quaternion.identity);
-            Instantiate(Processed_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Processed_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
             Destroy(other.gameObject);
         }
 
@@ -50,7 +50,7 @@ private void OnTriggerEnter(Collider other)
             Destroy(other.gameObject);
             fuelReserve += 1;
             isFired = true;
-            Instantiate(Fuel, myVector, Quaternion.identity);
+            Instantiate(Fuel, respawnCoal, Quaternion.identity);
         }
     }
 }

@@ -18,7 +18,7 @@ public class S_GrindingWheel : MonoBehaviour
     {
         if (playerIsNear) 
         {
-            wheel.Rotate(new Vector3(0, 50, 0) * Time.deltaTime * 20);
+            wheel.Rotate(new Vector3(0, 20, 0) * Time.deltaTime * 20);
         }
     }
     private void OnTriggerEnter(Collider other)
