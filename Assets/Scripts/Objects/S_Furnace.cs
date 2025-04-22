@@ -38,12 +38,6 @@ public class S_Furnace : MonoBehaviour
     }
 private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "RawOre" && isFired)
-        {
-            Instantiate(Raw_Ore, respawnOre, Quaternion.identity);
-            Instantiate(Processed_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
-            Destroy(other.gameObject);
-        }
 
         if (other.gameObject.tag == "Coal")
         {
@@ -51,6 +45,15 @@ private void OnTriggerEnter(Collider other)
             fuelReserve += 1;
             isFired = true;
             Instantiate(Fuel, respawnCoal, Quaternion.identity);
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "RawOre" && isFired)
+        {
+            Instantiate(Raw_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Processed_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
+            Destroy(other.gameObject);
         }
     }
 }
