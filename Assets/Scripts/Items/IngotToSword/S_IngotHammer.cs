@@ -19,6 +19,7 @@ public class S_IngotHammer : MonoBehaviour
     private bool onAnvil = false;
     private bool nodeStarted = false;
     private GameObject activeNode;
+    private GameObject previousNode;
     public S_GetAnvilNodeHit nodescript1;
     public S_GetAnvilNodeHit nodescript2;
     public S_GetAnvilNodeHit nodescript3;
@@ -38,28 +39,36 @@ public class S_IngotHammer : MonoBehaviour
         {
             scripts[i] = nodes[i].GetComponent<S_GetAnvilNodeHit>();
         }
-        newNode();
+        
     }
 
     private void newNode()
     {
         if (nodeStarted) 
         {
+            previousNode = activeNode;
             activeNode.GetComponent<MeshRenderer>().enabled = false;
         }
-        int randomIndex = Random.Range(0, nodes.Length);
-        activeNode = nodes[randomIndex];
-        activeNodescript = scripts[randomIndex];
+        nodeStarted = true;
+        while (previousNode == activeNode || !nodeStarted)
+        {
+            int randomIndex = Random.Range(0, nodes.Length);
+            activeNode = nodes[randomIndex];
+            activeNodescript = scripts[randomIndex];
+        }
 
         nodeRenderer = activeNode.GetComponent<MeshRenderer>();
         activeNode.GetComponent<MeshRenderer>().enabled = true;
-        nodeStarted = true;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (onAnvil && !nodeStarted)
+        {
+            newNode();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
