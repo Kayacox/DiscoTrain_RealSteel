@@ -13,7 +13,8 @@ public class S_IngotHammer : MonoBehaviour
     public GameObject Node4;
     public GameObject Anvil;
     public GameObject sword;
-    private Interactable hammerInteractable;
+    public GameObject swordSelection;
+    private S_BladeSelection selectionScript;
     private int hitCount = 0;
     private bool hammerOn = false;
     private bool onAnvil = false;
@@ -25,6 +26,7 @@ public class S_IngotHammer : MonoBehaviour
     public S_GetAnvilNodeHit nodescript3;
     public S_GetAnvilNodeHit nodescript4;
     private S_GetAnvilNodeHit activeNodescript;
+    public char bladeLength = 'l';
     S_GetAnvilNodeHit[] scripts;
     GameObject[] nodes;
     MeshRenderer nodeRenderer;
@@ -34,11 +36,12 @@ public class S_IngotHammer : MonoBehaviour
     {
         nodes = new GameObject[] { Node1, Node2, Node3, Node4 };
         scripts = new S_GetAnvilNodeHit[] { nodescript1, nodescript2, nodescript3, nodescript4 };
-        hammerInteractable = GetComponent<Interactable>();
+
         for (int i = 0; i < nodes.Length; i++)
         {
             scripts[i] = nodes[i].GetComponent<S_GetAnvilNodeHit>();
         }
+        selectionScript = swordSelection.GetComponent<S_BladeSelection>();
         
     }
 
@@ -80,7 +83,6 @@ public class S_IngotHammer : MonoBehaviour
         if (other.gameObject.name.Contains("Hammer") && !hammerOn && onAnvil || onAnvil && !nodeStarted)
         {
             hammerOn = true;
-            Debug.Log("Foo");
             foreach (S_GetAnvilNodeHit node in scripts)
             {
                 if (node.hit)
@@ -93,11 +95,11 @@ public class S_IngotHammer : MonoBehaviour
                 }
             }
             hitCount++;
-            Debug.Log($"{hitCount}");
             newNode();
             if (hitCount == 4)
             {
                 changeToSword();
+  
             }
         }
         
@@ -115,7 +117,21 @@ public class S_IngotHammer : MonoBehaviour
     }
     private void changeToSword()
     {
-        Instantiate(sword, transform.position, transform.rotation);
+        if (bladeLength == 'l')
+        {
+            Instantiate(sword, transform.position, transform.rotation);
+            Debug.Log("long");
+        }
+        if (bladeLength == 'm')
+        {
+            Instantiate(sword, transform.position, transform.rotation);
+            Debug.Log("medium");
+        }
+        if (bladeLength == 's')
+        {
+            Instantiate(sword, transform.position, transform.rotation);
+            Debug.Log("short");
+        }
         Destroy(gameObject);
     }
 }

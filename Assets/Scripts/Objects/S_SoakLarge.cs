@@ -22,7 +22,6 @@ public class S_SoakLarge : MonoBehaviour
         Debug.Log(swordScript);
         if (other.gameObject.name.Contains("Sword")) 
         {
-            Debug.Log("???????");
             other.gameObject.GetComponent<S_SwordScript>().soaked = true;
             Debug.Log("wet");
         }

@@ -249,10 +249,12 @@ MonoBehaviour:
   Node4: {fileID: 4928834814715320182}
   Anvil: {fileID: 2260900786134231309, guid: 3fc602795efa2484e941c0b6817fc9aa, type: 3}
   sword: {fileID: 3591014559421510553, guid: ffbf6193eb3e1a549a42a407b6b4afde, type: 3}
+  swordSelection: {fileID: 5911335316483589735, guid: 41690b8dca6509246a849750b7d95389, type: 3}
   nodescript1: {fileID: 0}
   nodescript2: {fileID: 0}
   nodescript3: {fileID: 0}
   nodescript4: {fileID: 0}
+  bladeLength: 108
 --- !u!65 &6805690881787066834
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -292,7 +294,7 @@ GameObject:
   - component: {fileID: 1658313908971160092}
   m_Layer: 0
   m_Name: Processed Ore
-  m_TagString: Untagged
+  m_TagString: ProcessedOre
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
