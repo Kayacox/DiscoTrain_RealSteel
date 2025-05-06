@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3496726186355174187}
   - component: {fileID: 1373963992887864455}
   - component: {fileID: 6065506895204856639}
+  - component: {fileID: 1506522155301538182}
   m_Layer: 0
   m_Name: WrappingCounter
   m_TagString: Untagged
@@ -118,3 +119,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d02d2df5a206654d8c454e83cd0ea2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &1506522155301538182
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884649278398990020}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.1544561, y: 4.2347155, z: 1.3111203}
+  m_Center: {x: -0.013017121, y: 2.437091, z: -0.002817374}

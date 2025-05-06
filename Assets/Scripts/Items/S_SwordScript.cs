@@ -21,7 +21,6 @@ public class S_SwordScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         if (other.isTrigger)
         {
             currentTriggers.Add(other);
