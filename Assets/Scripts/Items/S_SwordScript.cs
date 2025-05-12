@@ -25,7 +25,7 @@ public class S_SwordScript : MonoBehaviour
         {
             currentTriggers.Add(other);
         }
-        if (other.gameObject.name.Contains("Anvil"))
+        if (other.gameObject.name.Contains("Soak"))
         {
             soaked = true;
         }

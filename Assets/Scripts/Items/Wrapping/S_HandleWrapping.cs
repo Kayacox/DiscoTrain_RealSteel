@@ -65,13 +65,11 @@ public class S_HandleWrapping : MonoBehaviour
         GameObject target = GameObject.Find("Player");    
         if (other.transform.IsChildOf(target.transform) && onStation)
         {
-            Debug.Log("table and hand");
             foreach (S_GetSwordNodeHit node in scripts)
             {
                 Debug.Log(node);
                 if (node.hit)
                 {
-                    Debug.Log("hit");
                     if (node == activeNodescript)
                     {
                         Debug.Log("Correct Node");
@@ -105,7 +103,6 @@ public class S_HandleWrapping : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other);
         if (other.name == "WrappingCounter")
         {
             onStation = true;
