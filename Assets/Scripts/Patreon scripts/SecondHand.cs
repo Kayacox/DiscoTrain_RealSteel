@@ -25,7 +25,7 @@ public class SecondHand : MonoBehaviour
         hand.HideGrabHint();
     }
 
-    private void HandAttachedUpdate(Hand hand)
+    public void HandAttachedUpdate(Hand hand)
     {
         if(mainInteractable.attachedToHand)
         {
@@ -59,7 +59,7 @@ public class SecondHand : MonoBehaviour
         }
     }
 
-    private void HandHoverUpdate(Hand hand)
+    public void HandHoverUpdate(Hand hand)
     {
         GrabTypes grabType = hand.GetGrabStarting();
         bool isGrabEnding = hand.IsGrabEnding(gameObject);
