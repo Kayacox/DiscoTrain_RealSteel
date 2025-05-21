@@ -67,14 +67,12 @@ public class S_HandleWrapping : MonoBehaviour
         {
             foreach (S_GetSwordNodeHit node in scripts)
             {
-                Debug.Log(node);
                 if (node.hit)
                 {
                     if (node == activeNodescript)
                     {
                         Debug.Log("Correct Node");
                     }
-                    else { Debug.Log("Wrong Node"); }
                 }
             }
             hitCount++;

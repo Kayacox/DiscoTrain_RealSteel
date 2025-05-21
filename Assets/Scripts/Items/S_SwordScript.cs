@@ -1,21 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
-public class S_SwordScript : MonoBehaviour
+public class S_SwordScript : Interactable
 {
     public bool soaked = false;
     private HashSet<Collider> currentTriggers = new HashSet<Collider>();
     public int TriggerCount => currentTriggers.Count;
     public string[] parts;
+
+    public bool isGrabbed = false;
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         parts = new string[] {"Iron", "Round", "Cross", "Leather"};
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
         
     }
@@ -34,5 +37,17 @@ public class S_SwordScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         currentTriggers.Remove(other);
+    }
+
+    protected override void OnAttachedToHand(Hand hand)
+    {
+        base.OnAttachedToHand(hand);
+        isGrabbed = true;
+    }
+
+    protected override void OnDetachedFromHand(Hand hand)
+    {
+        base.OnDetachedFromHand(hand);
+        isGrabbed = false;
     }
 }
