@@ -3,7 +3,20 @@ guid: d9b9c1c26ff742c43b16accd09b28109
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Node1: {instanceID: 0}
+  - Node2: {instanceID: 0}
+  - Node3: {instanceID: 0}
+  - Node4: {instanceID: 0}
+  - Anvil: {instanceID: 0}
+  - ironSword: {fileID: 3591014559421510553, guid: ffbf6193eb3e1a549a42a407b6b4afde, type: 3}
+  - tinSword: {fileID: 3591014559421510553, guid: 1a3dd6b3f418a28428c41c490db467d8, type: 3}
+  - copperSword: {fileID: 3591014559421510553, guid: 3449ecb78ec777949bb259bb12d935c0, type: 3}
+  - swordSelection: {instanceID: 0}
+  - nodescript1: {instanceID: 0}
+  - nodescript2: {instanceID: 0}
+  - nodescript3: {instanceID: 0}
+  - nodescript4: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

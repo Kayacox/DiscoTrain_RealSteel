@@ -6,8 +6,12 @@ public class S_Furnace : MonoBehaviour
 {
     Vector3 respawnCoal = new Vector3(2.81f, 2f, 5.275f);
     Vector3 respawnOre = new Vector3(-12.54f, 19.881f, 2f);
-    public GameObject Processed_Ore;
-    public GameObject Raw_Ore;
+    public GameObject Processed_Iron_Ore;
+    public GameObject Raw_Iron_Ore;
+    public GameObject Processed_Tin_Ore;
+    public GameObject Raw_Tin_Ore;
+    public GameObject Processed_Copper_Ore;
+    public GameObject Raw_Copper_Ore;
     public GameObject Fuel;
     public bool isFired = false;
     public int fuelReserve = 0;
@@ -49,10 +53,22 @@ private void OnTriggerEnter(Collider other)
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "RawOre" && isFired)
+        if (other.gameObject.tag == "RawOre" && isFired && other.gameObject.name.ToLower().Contains("iron"))
         {
-            Instantiate(Raw_Ore, respawnOre, Quaternion.identity);
-            Instantiate(Processed_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
+            Instantiate(Raw_Iron_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Processed_Iron_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "RawOre" && isFired && other.gameObject.name.ToLower().Contains("copper"))
+        {
+            Instantiate(Raw_Copper_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Processed_Copper_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.tag == "RawOre" && isFired && other.gameObject.name.ToLower().Contains("tin"))
+        {
+            Instantiate(Raw_Tin_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Processed_Tin_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
             Destroy(other.gameObject);
         }
     }

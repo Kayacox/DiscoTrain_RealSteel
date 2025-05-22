@@ -12,7 +12,9 @@ public class S_IngotHammer : MonoBehaviour
     public GameObject Node3;
     public GameObject Node4;
     public GameObject Anvil;
-    public GameObject sword;
+    public GameObject ironSword;
+    public GameObject tinSword;
+    public GameObject copperSword;
     public GameObject swordSelection;
     private S_BladeSelection selectionScript;
     private int hitCount = 0;
@@ -26,10 +28,11 @@ public class S_IngotHammer : MonoBehaviour
     public S_GetAnvilNodeHit nodescript3;
     public S_GetAnvilNodeHit nodescript4;
     private S_GetAnvilNodeHit activeNodescript;
-    public char bladeLength = 'l';
     S_GetAnvilNodeHit[] scripts;
     GameObject[] nodes;
     MeshRenderer nodeRenderer;
+
+    public string material;
 
     // Start is called before the first frame update
     void Start()
@@ -117,20 +120,20 @@ public class S_IngotHammer : MonoBehaviour
     }
     private void changeToSword()
     {
-        if (bladeLength == 'l')
+        if (gameObject.name.ToLower().Contains("iron"))
         {
-            Instantiate(sword, transform.position, transform.rotation);
-            Debug.Log("long");
+            Instantiate(ironSword, transform.position, transform.rotation);
+            Debug.Log("iron");
         }
-        if (bladeLength == 'm')
+        if (gameObject.name.ToLower().Contains("tin"))
         {
-            Instantiate(sword, transform.position, transform.rotation);
-            Debug.Log("medium");
+            Instantiate(tinSword, transform.position, transform.rotation);
+            Debug.Log("tin");
         }
-        if (bladeLength == 's')
+        if (gameObject.name.ToLower().Contains("copper"))
         {
-            Instantiate(sword, transform.position, transform.rotation);
-            Debug.Log("short");
+            Instantiate(copperSword, transform.position, transform.rotation);
+            Debug.Log("copper");
         }
         Destroy(gameObject);
     }
