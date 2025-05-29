@@ -35,13 +35,16 @@ public class S_Scroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (grabAction.GetStateDown(pose.inputSource)) // Called when grabbed
+        if (pose != null) 
         {
-            OnGrab();
-        }
-        else if (grabAction.GetStateUp(pose.inputSource)) // Called when released
-        {
-            OnRelease();
+            if (grabAction.GetStateDown(pose.inputSource)) // Called when grabbed
+            {
+                OnGrab();
+            }
+            else if (grabAction.GetStateUp(pose.inputSource)) // Called when released
+            {
+                OnRelease();
+            }
         }
     }
 

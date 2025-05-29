@@ -49,7 +49,6 @@ public class S_Manager : MonoBehaviour
     }
     void tutorial()
     {
-        Debug.Log("here");
         tutorialText.text = "Taketh thy " + scrollData.currentParts[0] + " ore from the storage room, and place it with the furnace with coal to purify it into ingot form\n" +
             "Take your " + scrollData.currentParts[0] + " ingot and hammer it upon the anvil, with four precise strikes.\n" +
             "After the blade has been hammered, quench it in a tank to cool it.\n" +

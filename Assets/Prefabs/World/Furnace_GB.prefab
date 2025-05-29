@@ -111,8 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5d42c3455b4f734cbdec548cab2467e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Processed_Ore: {fileID: 4132625056411929601, guid: 927c479b7aa3f9b44beb28bc22b1a2af, type: 3}
-  Raw_Ore: {fileID: 1639415099130651968, guid: 1510b94b5aae63047b4f5f5aa25998a4, type: 3}
+  Processed_Iron_Ore: {fileID: 0}
+  Raw_Iron_Ore: {fileID: 0}
+  Processed_Tin_Ore: {fileID: 0}
+  Raw_Tin_Ore: {fileID: 0}
+  Processed_Copper_Ore: {fileID: 0}
+  Raw_Copper_Ore: {fileID: 0}
   Fuel: {fileID: 8230209180097974416, guid: 2e3d86868c5d9f34ca7e6c16eeb03282, type: 3}
   isFired: 0
   fuelReserve: 0
@@ -183,8 +187,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 10.236573, y: 3.0498683, z: 10.956885}
-  m_Center: {x: -0.049225558, y: 1.5249342, z: 0.4784412}
+  m_Size: {x: 10.236573, y: 3.3680022, z: 10.956884}
+  m_Center: {x: -0.0492255, y: 1.6840011, z: 0.47844115}
 --- !u!65 &1219634981877043810
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class S_IngotHammer : MonoBehaviour
     public GameObject copperSword;
     public GameObject swordSelection;
     private S_BladeSelection selectionScript;
+    public char bladeLength;
     private int hitCount = 0;
     private bool hammerOn = false;
     private bool onAnvil = false;
