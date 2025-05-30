@@ -29,31 +29,31 @@ public class S_SwordScript : Interactable
     // Start is called before the first frame update
     protected override void Start()
     {
-        RPRend = RPommel.GetComponent<Renderer>();
-        DPRend = DPommel.GetComponent<Renderer>();
-        CGRend = CGuard.GetComponent<Renderer>();
-        DGRend = DGuard.GetComponent<Renderer>();
+
+        string lowerName = gameObject.name.ToLower().Trim();
         pommel = false;
         guard = false;
         isWrapped = false;
         hasBeenWrapped = false;
-        if (gameObject.name.ToLower().Contains("tin"))
-        {
-            parts = new string[4];
+        parts = new string[4];
+        if (lowerName.Contains("tin"))
             parts[0] = "Tin";
-        }
-        if (gameObject.name.ToLower().Contains("iron"))
-        {
-            parts = new string[4];
+        else if (lowerName.Contains("iron"))
             parts[0] = "Iron";
-        }
-        if (gameObject.name.ToLower().Contains("copper"))
-        {
-            parts = new string[4];
+        else if (lowerName.Contains("copper"))
             parts[0] = "Copper";
+        else
+        {
+            parts[0] = "Unknown";
+            Debug.LogWarning("Unknown sword material: " + gameObject.name);
         }
         parts[1] = "Diamond";
         parts[2] = "Diamond";
+
+        foreach (char c in lowerName)
+        {
+            Debug.Log("Character: '" + c + "'");  // Check for any unexpected characters
+        }
     }
 
     // Update is called once per frame
@@ -61,7 +61,7 @@ public class S_SwordScript : Interactable
     {
         if (isWrapped && !hasBeenWrapped)
         {
-            parts[4] = "Leather";
+            parts[3] = "Leather";
             hasBeenWrapped = true;
         }
     }

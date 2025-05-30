@@ -1544,7 +1544,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6974472300599319890}
-  - component: {fileID: 8135968308263363695}
   - component: {fileID: 1084789623573239290}
   - component: {fileID: 7952681024970991488}
   - component: {fileID: 3079800530836948694}
@@ -1583,66 +1582,6 @@ Transform:
   - {fileID: 5697928793068320940}
   m_Father: {fileID: 313483870919579288}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!114 &8135968308263363695
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7746645691450410984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f415074d09ea1a24a995048a2aa04f3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateActionSetOnAttach:
-    actionSetPath: 
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
-  handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
-  attachEaseIn: 0
-  snapAttachEaseInCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  snapAttachEaseInTime: 0.15
-  snapAttachEaseInCompleted: 0
-  skeletonPoser: {fileID: 0}
-  handFollowTransform: 1
-  highlightOnHover: 1
-  hideHighlight: []
-  hoverPriority: 0
-  soaked: 0
-  parts: []
-  RPommel: {fileID: 0}
-  DPommel: {fileID: 0}
-  CGuard: {fileID: 0}
-  DGuard: {fileID: 0}
-  isGrabbed: 0
-  isWrapped: 0
 --- !u!65 &1084789623573239290
 BoxCollider:
   m_ObjectHideFlags: 0

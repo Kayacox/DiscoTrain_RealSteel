@@ -11,6 +11,7 @@ TagManager:
   - Coal
   - Button
   - AnvilNode
+  - Sword
   layers:
   - Default
   - TransparentFX
