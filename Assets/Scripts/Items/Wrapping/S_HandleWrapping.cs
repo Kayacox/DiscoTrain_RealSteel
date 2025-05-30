@@ -72,29 +72,33 @@ public class S_HandleWrapping : MonoBehaviour
                     if (node == activeNodescript)
                     {
                         Debug.Log("Correct Node");
+                        hitCount++;
+                        if (hitCount < 4)
+                        {
+                            newNode();
+                        }
+                        if (hitCount == 4)
+                        {
+                            wrapInstance = Instantiate(handleWrap, transform);
+                            Vector3 currentPos = wrapInstance.transform.localPosition;
+
+                            wrapInstance.transform.localPosition = new Vector3(currentPos.x, currentPos.y, 0.05f);
+                            wrapInstance.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+                            wrapInstance.transform.localScale = new Vector3(60f, 90f, 120f);
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("Wrong node");
                     }
                 }
-            }
-            hitCount++;
-            if (hitCount < 4)
-            {
-                newNode();
-            }
-            if (hitCount == 4)
-            {
-                wrapInstance = Instantiate(handleWrap, transform);
-                Vector3 currentPos = wrapInstance.transform.localPosition;
-
-                wrapInstance.transform.localPosition = new Vector3(currentPos.x, currentPos.y, 0.05f);
-                wrapInstance.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
-                wrapInstance.transform.localScale = new Vector3(60f, 90f, 120f);
             }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other == wrappingStation)
+        if (other.name == "WrappingCounter")
         {
             onStation = false;
         }
