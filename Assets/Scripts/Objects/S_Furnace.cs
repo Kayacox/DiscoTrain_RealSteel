@@ -5,7 +5,9 @@ using UnityEngine;
 public class S_Furnace : MonoBehaviour
 {
     Vector3 respawnCoal = new Vector3(2.81f, 2f, 5.275f);
-    Vector3 respawnOre = new Vector3(-12.54f, 19.881f, 2f);
+    Vector3 respawnIronOre = new Vector3(-20.782f, 19.465f, 6.785f);
+    Vector3 respawnCopperOre = new Vector3(-5.357f, 0.726f, 9.484f);
+    Vector3 respawnTinOre = new Vector3(-5.357f, 0.726f, 10.526f);
     public GameObject Processed_Iron_Ore;
     public GameObject Raw_Iron_Ore;
     public GameObject Processed_Tin_Ore;
@@ -53,21 +55,21 @@ private void OnTriggerEnter(Collider other)
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "RawOre" && isFired && other.gameObject.name.ToLower().Contains("iron"))
+        if (other.gameObject.name.ToLower() == "iron ore" && isFired)
         {
-            Instantiate(Raw_Iron_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Raw_Iron_Ore, respawnIronOre, Quaternion.identity);
             Instantiate(Processed_Iron_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
             Destroy(other.gameObject);
         }
-        if (other.gameObject.tag == "RawOre" && isFired && other.gameObject.name.ToLower().Contains("copper"))
+        if (other.gameObject.name.ToLower() == "copper" && isFired)
         {
-            Instantiate(Raw_Copper_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Raw_Copper_Ore, respawnCopperOre, Quaternion.identity);
             Instantiate(Processed_Copper_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
             Destroy(other.gameObject);
         }
-        if (other.gameObject.tag == "RawOre" && isFired && other.gameObject.name.ToLower().Contains("tin"))
+        if (other.gameObject.name.ToLower() == "tin" && isFired)
         {
-            Instantiate(Raw_Tin_Ore, respawnOre, Quaternion.identity);
+            Instantiate(Raw_Tin_Ore, respawnTinOre, Quaternion.identity);
             Instantiate(Processed_Tin_Ore, (transform.position + Vector3.up * 0.6f + Vector3.left * 0.7f), Quaternion.identity);
             Destroy(other.gameObject);
         }
