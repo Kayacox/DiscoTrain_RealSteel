@@ -121,19 +121,20 @@ public class S_IngotHammer : MonoBehaviour
     }
     private void changeToSword()
     {
+        Quaternion newRotation = transform.rotation * Quaternion.Euler(90f, 0f, 90f);
         if (gameObject.name.ToLower().Contains("iron"))
         {
-            Instantiate(ironSword, transform.position, transform.rotation);
+            Instantiate(ironSword, transform.position, newRotation);
             Debug.Log("iron");
         }
         if (gameObject.name.ToLower().Contains("tin"))
         {
-            Instantiate(tinSword, transform.position, transform.rotation);
+            Instantiate(tinSword, transform.position, newRotation);
             Debug.Log("tin");
         }
         if (gameObject.name.ToLower().Contains("copper"))
         {
-            Instantiate(copperSword, transform.position, transform.rotation);
+            Instantiate(copperSword, transform.position, newRotation);
             Debug.Log("copper");
         }
         Destroy(gameObject);

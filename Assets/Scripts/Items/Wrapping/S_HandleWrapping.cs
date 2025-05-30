@@ -82,6 +82,8 @@ public class S_HandleWrapping : MonoBehaviour
                             Renderer rend = handleWrap.GetComponent<Renderer>();
                             rend.enabled = true;
                             activeNode.GetComponent<MeshRenderer>().enabled = false;
+                            S_SwordScript passIt = transform.parent.GetComponentInParent<S_SwordScript>();
+                            passIt.isWrapped = true;
                         }
                     }
                     else

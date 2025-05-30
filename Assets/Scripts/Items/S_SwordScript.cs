@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
@@ -9,18 +10,60 @@ public class S_SwordScript : Interactable
     private HashSet<Collider> currentTriggers = new HashSet<Collider>();
     public int TriggerCount => currentTriggers.Count;
     public string[] parts;
+    public GameObject RPommel;
+    public GameObject DPommel;
+    public GameObject CGuard;
+    public GameObject DGuard;
+
+    Renderer RPRend;
+    Renderer DPRend;
+    Renderer CGRend;
+    Renderer DGRend;
+
+    bool pommel;
+    bool guard;
 
     public bool isGrabbed = false;
+    public bool isWrapped;
+    private bool hasBeenWrapped;
     // Start is called before the first frame update
     protected override void Start()
     {
-        parts = new string[] {"Iron", "Round", "Cross", "Leather"};
+        RPRend = RPommel.GetComponent<Renderer>();
+        DPRend = DPommel.GetComponent<Renderer>();
+        CGRend = CGuard.GetComponent<Renderer>();
+        DGRend = DGuard.GetComponent<Renderer>();
+        pommel = false;
+        guard = false;
+        isWrapped = false;
+        hasBeenWrapped = false;
+        if (gameObject.name.ToLower().Contains("tin"))
+        {
+            parts = new string[4];
+            parts[0] = "Tin";
+        }
+        if (gameObject.name.ToLower().Contains("iron"))
+        {
+            parts = new string[4];
+            parts[0] = "Iron";
+        }
+        if (gameObject.name.ToLower().Contains("copper"))
+        {
+            parts = new string[4];
+            parts[0] = "Copper";
+        }
+        parts[1] = "Diamond";
+        parts[2] = "Diamond";
     }
 
     // Update is called once per frame
     protected override void Update()
     {
-        
+        if (isWrapped && !hasBeenWrapped)
+        {
+            parts[4] = "Leather";
+            hasBeenWrapped = true;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,6 +76,38 @@ public class S_SwordScript : Interactable
         {
             soaked = true;
         }
+        /*if (other.gameObject == RPommel && !pommel)
+        {
+            RPRend.enabled = true;
+            pommel = true;
+            parts[1] = "Round";
+            Destroy(other.gameObject);
+            Instantiate(other.gameObject, new Vector3(-3.742f, 1.238f, -0.959f), Quaternion.identity);
+        }
+        if (other.gameObject == DPommel && !pommel) 
+        { 
+            DPRend.enabled = true;
+            pommel = true;
+            parts[1] = "Diamond";
+            Destroy(other.gameObject);
+            Instantiate(other.gameObject, new Vector3(-3.41604f, 1.239f, -0.987f), Quaternion.identity);
+        }
+        if (other.gameObject == CGuard && !guard) 
+        {
+            CGRend.enabled = true;
+            guard = true;
+            parts[3] = "Curved";
+            Destroy(other.gameObject);
+            Instantiate(other.gameObject, new Vector3(-3.41604f, 1.227f, -1.202f), Quaternion.identity);
+        }
+        if (other.gameObject == DGuard && !guard) 
+        { 
+            DGRend.enabled = true;
+            guard = true;
+            parts[3] = "Curved";
+            Destroy(other.gameObject);
+            Instantiate(other.gameObject, new Vector3(-3.721f, 1.226f, -1.25f), Quaternion.identity);
+        }*/
     }
     private void OnTriggerExit(Collider other)
     {

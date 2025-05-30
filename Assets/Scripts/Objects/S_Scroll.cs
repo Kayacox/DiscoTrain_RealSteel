@@ -21,8 +21,8 @@ public class S_Scroll : MonoBehaviour
         possibleParts = new string[4][];
         currentParts = new string[4];
         possibleParts[0] = new string[] {"Iron", "Copper", "Tin"};
-        possibleParts[1] = new string[] {"Round", "Diamond", "Cone"};
-        possibleParts[2] = new string[] {"Cross", "Circle", "Diamond"};
+        possibleParts[1] = new string[] {"Round", "Diamond"};
+        possibleParts[2] = new string[] {"Curved", "Diamond"};
         possibleParts[3] = new string[] {"Leather"};
   
         pose = GetComponent<SteamVR_Behaviour_Pose>();
@@ -60,6 +60,8 @@ public class S_Scroll : MonoBehaviour
             currentParts[arrIndex] = part[randomIndex];
             arrIndex++;
         }
+        currentParts[1] = "Diamond";
+        currentParts[2] = "Diamond";
     }
 
     private void OnGrab() { }

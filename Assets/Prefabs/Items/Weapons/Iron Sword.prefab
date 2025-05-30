@@ -458,7 +458,7 @@ GameObject:
   - component: {fileID: 2891711926396776092}
   m_Layer: 0
   m_Name: Iron Sword
-  m_TagString: Untagged
+  m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -941,7 +941,12 @@ MonoBehaviour:
   hoverPriority: 0
   soaked: 0
   parts: []
+  RPommel: {fileID: 0}
+  DPommel: {fileID: 0}
+  CGuard: {fileID: 0}
+  DGuard: {fileID: 0}
   isGrabbed: 0
+  isWrapped: 0
 --- !u!114 &570476825285376098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1116,7 +1121,7 @@ GameObject:
   - component: {fileID: 2315147513545257423}
   - component: {fileID: 4115430260005163713}
   m_Layer: 0
-  m_Name: Pommel.001
+  m_Name: Round Pommel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1152,7 +1157,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4672972424966456933}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1199,7 +1204,7 @@ GameObject:
   - component: {fileID: 7458293108274238363}
   - component: {fileID: 2323400190802867785}
   m_Layer: 0
-  m_Name: Hilt.001
+  m_Name: Curved Hilt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1235,7 +1240,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5338993704398057084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1516,6 +1521,8 @@ Transform:
   - {fileID: 8266193782923565563}
   - {fileID: 6989604479731288093}
   - {fileID: 4024464982623392931}
+  - {fileID: 4044159514973242036}
+  - {fileID: 2349347422345915011}
   m_Father: {fileID: 313483870919579288}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!114 &8135968308263363695
@@ -1572,7 +1579,12 @@ MonoBehaviour:
   hoverPriority: 0
   soaked: 0
   parts: []
+  RPommel: {fileID: 0}
+  DPommel: {fileID: 0}
+  CGuard: {fileID: 0}
+  DGuard: {fileID: 0}
   isGrabbed: 0
+  isWrapped: 0
 --- !u!65 &1084789623573239290
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1710,3 +1722,155 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!1001 &2814809647479065960
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6974472300599319890}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071067
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.7071069
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 51ecc8ce0934b9b4f8a53c8bc17786aa, type: 2}
+    - target: {fileID: 919132149155446097, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+      propertyPath: m_Name
+      value: Diamond guard
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+--- !u!4 &2349347422345915011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 826718691228c8e42b7edb4e33a5f019, type: 3}
+  m_PrefabInstance: {fileID: 2814809647479065960}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4581573537084630367
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6974472300599319890}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 93.862724
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 93.86273
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 93.86272
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.9
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.0000000842937
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 334fff00980f7de41b2b34223d4ee38e, type: 2}
+    - target: {fileID: 919132149155446097, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+      propertyPath: m_Name
+      value: Diamond pummel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+--- !u!4 &4044159514973242036 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f9890742e1de6af40a68ca590c0a0d03, type: 3}
+  m_PrefabInstance: {fileID: 4581573537084630367}
+  m_PrefabAsset: {fileID: 0}

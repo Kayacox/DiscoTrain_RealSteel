@@ -13,6 +13,7 @@ public class S_Sell : MonoBehaviour
     void Start()
     {
         scrollKA = GetComponentInParent<S_Scroll>();
+        score = 0;
     }
 
     // Update is called once per frame
@@ -23,21 +24,32 @@ public class S_Sell : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name.ToLower().Contains("sword"))
+        Debug.Log("Collision");
+        if (other.CompareTag("Sword"))
         {
-            score = 0;
+            
             S_SwordScript swordS = other.GetComponent<S_SwordScript>();
             weaponParts = swordS.parts;
             currentParts = scrollKA.currentParts;
+            currentParts[1] = "Diamond";
+            currentParts[2] = "Diamond";
+            Debug.Log("Pre grab");
             if (!swordS.isGrabbed)
             {
+                Debug.Log("not grabbed");
+                Debug.Log($"currentParts.Length: {currentParts.Length}");
+                Debug.Log($"weaponParts.Length: {weaponParts.Length}");
                 for (int i = 0; i < currentParts.Length; i++)
                 {
+                    Debug.Log($"Index {i}: currentParts[{i}] = {currentParts[i]}, weaponParts[{i}] = {weaponParts[i]}");
+                    Debug.Log($"loop {i}, currentPart: {currentParts[i]}, weaponPart: {weaponParts[i]}");
                     if (currentParts[i] == weaponParts[i])
                     {
                         score++;
+                        Debug.Log("same");
                     }
                 }
+                Debug.Log("nope");
                 Destroy(other.gameObject);
                 manager.gold += score * 25;
                 scrollKA.newParts();
